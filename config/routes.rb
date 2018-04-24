@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'user#index'
   get 'welcome/index'
   get 'welcome/about'
-  get 'user/index'
-  get 'user/login'
+
+  #get 'user/login'
 
   get 'auth/facebook', as: "auth_provider"
   get 'auth/facebook/callback', to: 'users#login'

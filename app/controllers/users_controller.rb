@@ -1,4 +1,3 @@
-require 'dotenv'
 class UsersController < ApplicationController
   def index
 

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.koala(request.env['omniauth.auth']['credentials'])
 
     if User.where(name == user['name']) do
+      
       User.create(name: @user['name'], email: 'myEmail@emailFroMIF.com')
     end
 

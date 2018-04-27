@@ -7,7 +7,7 @@ class User < ApplicationRecord
  end
 
  def new
-   new_user = User.create(name: @user['name'], email: 'email@email.net')
+   new_user = User.create(name: @user['name'], email: 'email@email.net')  
  end
 
 end

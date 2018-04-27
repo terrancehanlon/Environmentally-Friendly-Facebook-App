@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

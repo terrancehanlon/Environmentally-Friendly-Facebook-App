@@ -5,8 +5,9 @@ class UsersController < ApplicationController
   def login
     @user = User.koala(request.env['omniauth.auth']['credentials'])
 
-    if User.exists? (:name => user['name']) do
-      @new_user = User.new(name: @user['name'], email: 'myEmail@emailFroMIF.com')
+    if User.where(:name => user['name']).find_each do |user|
+      @user= User.new(name: @user['name'], email: 'myEmail@emailFroMIF.com')
+      puts 'in if'
     end
 
     else
@@ -16,7 +17,6 @@ class UsersController < ApplicationController
 
 
   def create_account
-    #ssh
   end
 
 

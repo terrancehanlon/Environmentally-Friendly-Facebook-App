@@ -4,14 +4,18 @@ class UsersController < ApplicationController
 
   def login
     @user = User.koala(request.env['omniauth.auth']['credentials'])
+    @recycle_list  = RecycleList.where("user_fb_id = Terrance")
 
     #if User.where(:name => user['name']).find_each do |user|
-      @user= User.new(name: @user['name'], email: 'myEmail@emailFroMIF.com')
+      #@user= User.new(name: @user['name'], email: 'myEmail@emailFroMIF.com')
       puts 'in if'
+
+
+
     #end
 
     #else
-      User.create(name: @user['name'], email: 'myEmail@email.com')
+      #User.create(name: @user['name'], email: 'myEmail@email.com')
     #end
   end
 

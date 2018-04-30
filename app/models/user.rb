@@ -1,16 +1,17 @@
 class User < ApplicationRecord
 
-  def self.koala(auth)
-      access_token = auth['token']
-      facebook = Koala::Facebook::API.new(access_token)
-      facebook.get_object("me?fields=name,picture")
- end
+  def update_based_on_facebook_params(facebook_object)
+    self.email = facebook_object.email
+    self.first_name = facebook_object.first_name
+    self.save
+  end
 
- def new
-   new_user = User.create(name: @user['name'], email: 'email@email.net')
- end
+  def new_list(item)
+    new_list = RecycleList.where(email: self.email, item: item).first_or_create
+  end
 
- def new_list
-   @recycle_list = RecycleList.create(user_fb_id: @user['name'], item: 'item here')
- end
+  def retrieve_list
+    list = RecycleList.where(email: self.email)
+  end
+
 end

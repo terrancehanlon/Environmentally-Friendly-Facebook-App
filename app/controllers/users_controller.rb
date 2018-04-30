@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  include Devise::Controllers::SignIn
+  #include Devise::Controllers::SignIn
   def index
   end
 

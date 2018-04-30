@@ -6,8 +6,8 @@ class User < ApplicationRecord
     self.save
   end
 
-  def new_list(item)
-    new_list = RecycleList.where(email: self.email, item: item).first_or_create
+  def new_list(name)
+    new_list = RecycleList.where(email: self.email, item: name).first_or_create
   end
 
   def retrieve_list

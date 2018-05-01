@@ -25,7 +25,7 @@ class User < ApplicationRecord
   end
 
   def password_required?
-  false
-end
+  super if confirmed?
+  end
 
 end

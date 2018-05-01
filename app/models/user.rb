@@ -28,4 +28,8 @@ class User < ApplicationRecord
     !persisted? || !password.nil? || !password_confirmation.nil?
   end
 
+  def show_list
+    render RecycleList.where(user_fb_id: current_user.fb_id)
+  end
+
 end

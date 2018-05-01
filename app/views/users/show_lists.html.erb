@@ -1,3 +1,14 @@
 <h1>Showing List(s) </h1>
 
+<tbody>
+    <% RecycleList.all.each do |list| =%>
+    <% if list.user_fb_id == current_user.fb_id %>
+    <tr>
+       <%= list.user_fb_id %>
+    </tr>
+
+    <% end %>
+
+    <% end %>
+</tbody>
 <%= @list.user_fb_id %>

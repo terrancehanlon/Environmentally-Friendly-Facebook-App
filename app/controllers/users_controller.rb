@@ -14,10 +14,12 @@ class UsersController < ApplicationController
   def create_account
   end
 
-  def create_list(name)
-    name= 'name here'
-    user = current_user
-    user.new_list(item)
+  def create_list
+    list = RecycleList.create(user_fb_id: current_user.fb_id)
+  end
+
+  def show_lists
+    render RecycleList.where(user_fb_id: current_user.fb_id)
   end
 
   private

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # get 'welcome/about'
   get 'users/create_account' => 'users#create_account'
   get 'users/create_list' => 'users#create_list'
+  get 'users/lists' => 'users#show_lists'
 
 
 

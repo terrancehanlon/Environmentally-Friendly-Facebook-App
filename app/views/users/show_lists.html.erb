@@ -4,7 +4,7 @@
     <% RecycleList.all.each do |list| =%>
     <% if list.user_fb_id == current_user.fb_id %>
     <tr>
-       <%= list.user_fb_id %>
+       You recycled an item at: <%= list.created_at %>
     </tr>
 
     <% end %>

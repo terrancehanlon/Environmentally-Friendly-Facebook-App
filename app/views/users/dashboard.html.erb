@@ -3,16 +3,16 @@
 
 <h1> Add an item you recycled! </h1>
 
-<input type="button" onclick="showDiv()" value="create a new list">
+<!-- <input type="button" onclick="showDiv()" value="create a new list"> -->
 
-  <div id="showlist" style="display:none">
-    <%= form_for @list do |f| %>
-      <label>Name of List </label><br />
+  <!-- <div id="showlist" style="display:none">
+    <%= form_for list do |f| %>
+      <%= f.label :name_label %>><br />
       <%= f.text_field :list_name %>
       <br />
-      <% end %>
+      <% end %> -->
     <%= link_to "Create List", '/users/create_list' %>
-  </div>
+  <!--</div> -->
 
 <script>
   function showDiv(){
@@ -22,4 +22,4 @@
 
 
 <h1> Show lists </h1>
- <%= link_to "Show List", '/users/lists' %>
+ <%= link_to "Show your list!", '/users/lists' %>

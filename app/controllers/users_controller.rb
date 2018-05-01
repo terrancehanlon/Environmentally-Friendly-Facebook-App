@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
 
-  def create_account
+  def create_account  
   end
 
   def create_list(name)

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'users#index'
-  devise_for :users, only: []
+
   # get 'welcome/index'
   # get 'welcome/about'
   get 'users/create_account' => 'users#create_account'

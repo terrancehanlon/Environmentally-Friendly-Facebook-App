@@ -5,8 +5,8 @@
 
 <input type="button" onclick="showDiv()" value="create a new list">
 
-  <div id="showlist" style="display:none;">
-    <%= form_for @list |f| %>
+  <div id="showlist" style="display:none">
+    <%= form_for @list do |f| %>
       <label>Name of List </label><br />
       <%= f.text_field :list_name %>
       <br />

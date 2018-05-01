@@ -1,13 +1,19 @@
-<%= link_to "Facebook Login", '/auth/facebook' %>
-<h1>Welcome</h1> <br/>
-<div class="jumbotron jumbotron-fluid">\
-  <div class="container">
-  <h1 class="display-3"> Simple Recycle Tracker </h1>
-  <p class="lead"> CSCI 428 </p>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3"> Simple Recycle Tracker </h1>
+        <p class="lead"> Terrance Hanlon | CSCI 428 </p>
+      </div>
+  </div>
+<div class="container">  <h1 class="display-1" style="text-align:center; font-size: 3em"><%= link_to "Log in with Facebook", '/auth/facebook' %> </h1>
+<h2 class="display-2" style="text-align:center;"> Use this app to mark how much you recycle </h2>
+<h2 class="display-2" style="text-align:center;"> See your footprint on the enviornment </h2>
+<h2 class="display-2" style="text-align:center;"> See how easy it is to log in with Facebook </h2>
+
 </div>
-</div>
-<h3> Make account? </h3>
-<%= link_to "Create Account", 'users/create_account' %>
+
+
+
 
 
 <!-- # <%= form_for :location do |f| %>

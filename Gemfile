@@ -36,6 +36,8 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
 gem 'dotenv-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

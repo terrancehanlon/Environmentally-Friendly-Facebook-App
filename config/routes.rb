@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'users#index'
-  get 'welcome/index'
-  get 'welcome/about'
+  # get 'welcome/index'
+  # get 'welcome/about'
   get 'users/create_account' => 'users#create_account'
   get 'users/create_list' => 'users#create_list'
 

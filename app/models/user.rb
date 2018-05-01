@@ -24,8 +24,8 @@ class User < ApplicationRecord
     list = RecycleList.where(user_fb_id: self.fb_id)
   end
 
-  def require_password?
-    return false
+  def password_required?
+    !persisted? || !password.nil? || !password_confirmation.nil?
   end
 
 end

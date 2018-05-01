@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def create_list
-    user = current_user
+    user = User.where(fb_id: current_user.fb_id)
     if user.has_list?
       render 'has list'
   else

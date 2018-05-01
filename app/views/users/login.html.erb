@@ -1,7 +1,7 @@
 <h1> Successfully Logged in ... </h1>
 
 <% if user_signed_in? %>
-  <%= link_to "Dash Board", '/users/create_list' %>
+  <%= link_to "Dash Board", '/users/dashboard' %>
   <div>Signed in as... <%= current_user.name %></div>
 <% end %>
 

@@ -1,3 +1,5 @@
 <h1> list created </h1>
 
-<h1><%= current_user.show_list %> </h1>
+<% if user_signed_in? %>
+  <div>Signed in as... <%= current_user.name %></div>
+<% end %>

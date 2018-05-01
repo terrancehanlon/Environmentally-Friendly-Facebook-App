@@ -8,7 +8,7 @@
 <% if user_signed_in? %>
 
   <div style="text-align:center;"><h1> Signed in as... <%= current_user.name %> </h1></div>
-  <%= link_to "Click here to view your DashBoard", '/users/dashboard' %>
+  <h1 style="text-align:center"><%= link_to "Click here to view your DashBoard", '/users/dashboard' %> </h1>
 <% end %>
 
 <!-- <h1> create list </h1>
@@ -16,3 +16,4 @@
 
 <h1> Show lists </h1>
  <%= link_to "Show List", '/users/lists' %> -->
+1

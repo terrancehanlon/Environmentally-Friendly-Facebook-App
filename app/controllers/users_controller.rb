@@ -15,11 +15,11 @@ class UsersController < ApplicationController
   end
 
   def create_list
-    list = RecycleList.create(user_fb_id: current_user.fb_id)
+    @list = RecycleList.create(user_fb_id: current_user.fb_id)
   end
 
   def show_list
-    render RecycleList.where(user_fb_id: current_user.fb_id)
+    #render RecycleList.where(user_fb_id: current_user.fb_id)
   end
 
   private

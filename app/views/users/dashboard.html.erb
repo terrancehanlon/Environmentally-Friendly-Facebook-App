@@ -1,14 +1,14 @@
 <h1> dashboard </h1>
 
 
-<h1> create list </h1>
+<h1> Add an item you recycled! </h1>
 
 <input type="button" onclick="showDiv()" value="create a new list">
 
   <div id="showlist" style="display:none;">
-    <%= form_for :RecyleList do |list| %>
-      <%= list.label :name_label %> <br />
-      <%= list.text_field :list_name %>
+    <%= form_for RecycleList.new |f| %>
+      <label>Name of List </label><br />
+      <%= f.text_field :list_name %>
       <br />
       <%= list.submit %>
       <% end %>

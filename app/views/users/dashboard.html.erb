@@ -6,11 +6,10 @@
 <input type="button" onclick="showDiv()" value="create a new list">
 
   <div id="showlist" style="display:none;">
-    <%= form_for RecycleList.new |f| %>
+    <%= form_for @list |f| %>
       <label>Name of List </label><br />
       <%= f.text_field :list_name %>
       <br />
-      <%= list.submit %>
       <% end %>
     <%= link_to "Create List", '/users/create_list' %>
   </div>

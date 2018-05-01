@@ -1,12 +1,12 @@
-<h1> DASHBOARD</h1>
+<h1> Successfully Logged in ... </h1>
 
 <% if user_signed_in? %>
-
+  <%= link_to "Dash Board", '/users/create_list' %>
   <div>Signed in as... <%= current_user.name %></div>
 <% end %>
 
-<h1> create list </h1>
+<!-- <h1> create list </h1>
 <%= link_to "Create List", '/users/create_list' %>
 
 <h1> Show lists </h1>
- <%= link_to "Show List", '/users/lists' %>
+ <%= link_to "Show List", '/users/lists' %> -->

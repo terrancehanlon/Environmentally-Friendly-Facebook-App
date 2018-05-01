@@ -15,10 +15,6 @@ class UsersController < ApplicationController
   end
 
   def create_list
-    user = User.where(fb_id: current_user.fb_id)
-    if user.has_list?
-      render 'has list'
-  else
     list = RecycleList.create(user_fb_id: current_user.fb_id)
      user.has_list = true
    end
@@ -28,6 +24,9 @@ class UsersController < ApplicationController
     #render RecycleList.where(user_fb_id: current_user.fb_id)
   end
 
+  def dashboard
+  end
+
   private
 
   # def get_facebook_user_credentials(auth)
@@ -35,5 +34,3 @@ class UsersController < ApplicationController
   #   facebook = Koala::Facebook::API.new(access_token)
   #   facebook.get_object("me?fields=name,picture,email")
   # end
-
-end

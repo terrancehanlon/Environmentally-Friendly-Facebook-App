@@ -2,7 +2,25 @@
 
 
 <h1> create list </h1>
-<%= link_to "Create List", '/users/create_list' %>
+
+<input type="button" onclick>
+
+  <div id="showlist" style="display:none;">
+    <%= form_for :RecyleList do |list| %>
+      <%= list.label :name_label %> <br />
+      <%= list.text_field :list_name %>
+      <br />
+      <%= list.submit %>
+      <% end %>
+    <%= link_to "Create List", '/users/create_list' %>
+  </div>
+
+<script>
+  function showDiv(){
+    document.getElementById('showList').style.display = "block";
+  }
+</script>
+
 
 <h1> Show lists </h1>
  <%= link_to "Show List", '/users/lists' %>

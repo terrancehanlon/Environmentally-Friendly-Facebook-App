@@ -1,5 +1,5 @@
 <h1> list created </h1>
 
 <% if user_signed_in? %>
-  <div>Signed in as... <%= @user.show_list%></div>
+  <div>Signed in as... <%= current_user.show_lists%></div>
 <% end %>

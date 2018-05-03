@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { users_controller: 'auth/facebook/callback' }
+  devise_for :users
 
   root 'users#index'
 

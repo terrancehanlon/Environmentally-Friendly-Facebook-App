@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+
   #include Devise::Controllers::SignIn
   def index
   end

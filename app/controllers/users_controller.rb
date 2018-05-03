@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def login
     facebook_object = User.koala(request.env['omniauth.auth']['credentials'])
     #if User.exists?(fb_id: facebook_object['id'])
-      user = User.where(fb_id: facebook_object['id']).first_or_create
+      user = User.new(fb_id: facebook_object['id'])
+      user.save
       user.update_based_on_facebook_params(facebook_object)
       sign_in(user)
     # else

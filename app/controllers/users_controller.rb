@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       #user.update_based_on_facebook_params(facebook_object)
       # user.save
       sign_in(user)
-    end
+    
   end
 
 

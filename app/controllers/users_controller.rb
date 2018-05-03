@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         user = User.where(fb_id: facebook_object['id'], name: facebook_object['name'])
         sign_in(user)
       else
-      user = User.where(fb_id: facebook_object['id'], name: facebook_object['name'], email: 'bogus@bogdus.com', password: 'securePassword123').first_or_create
+      user = User.where(fb_id: facebook_object['id'], name: facebook_object['name'], email: 'bogus@bogdus.com', encrypted_password: 'securePassword123').first_or_create
       sign_in(user)
     end
 

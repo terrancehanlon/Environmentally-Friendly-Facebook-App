@@ -14,14 +14,14 @@ class UsersController < ApplicationController
     #   user.save
     #   sign_in(user)
   end
-  end
+
 
 
   def create_account
   end
 
   def create_list
-    @list = RecycleList.create(user_fb_id: current_user.fb_id, name: params[:list_name])
+    @list = RecycleList.create(user_fb_id: current_user.fb_id)
      #user.has_list = true
    end
 

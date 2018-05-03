@@ -27,10 +27,4 @@ class UsersController < ApplicationController
   def dashboard
   end
 
-  private
-
-  # def get_facebook_user_credentials(auth)
-  #   access_token = auth['token']
-  #   facebook = Koala::Facebook::API.new(access_token)
-  #   facebook.get_object("me?fields=name,picture,email")
-  # end
+end

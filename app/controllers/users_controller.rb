@@ -5,9 +5,14 @@ class UsersController < ApplicationController
 
   def login
     facebook_object = User.koala(request.env['omniauth.auth']['credentials'])
+    if User.exists?(fb_id: facebook_object['id'])
+      user = User.new(fb_id: facebook_object['id'], name: facebook_object['name'])
+      sign_in(user)
+    else
     user = User.where(fb_id: facebook_object['id'], name: facebook_object['name']).first_or_create
     user.update_based_on_facebook_params(facebook_object)
     sign_in(user)
+  end
   end
 
 
@@ -18,7 +23,7 @@ class UsersController < ApplicationController
     @list = RecycleList.create(user_fb_id: current_user.fb_id, name: params[:list_name])
      #user.has_list = true
    end
-  
+
 
   def show_list
     #render RecycleList.where(user_fb_id: current_user.fb_id)

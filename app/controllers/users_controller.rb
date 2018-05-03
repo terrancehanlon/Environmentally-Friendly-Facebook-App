@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       user = User.new(fb_id: facebook_object['id'], name: facebook_object['name'], email: 'bogus@bogdus.com', encrypted_password: 'securePassword123')
       user.save
       user_to_sign_in = User.where(fb_id: facebook_object['id'])
-      sign_in(user_to_sign_in)
+      sign_in(user)
     end
 
   end

@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   def update_based_on_facebook_params(facebook_object)
     self.fb_id = facebook_object['id']
-    self.name = facebook_object['name']
+    self.name = facebook_object['name'] +  'name'
     self.save
   end
 

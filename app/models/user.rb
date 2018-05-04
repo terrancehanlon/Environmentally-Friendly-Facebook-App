@@ -8,7 +8,7 @@ class User < ApplicationRecord
     self.fb_id = facebook_object['id']
     self.name = facebook_object['name']
     self.email = facebook_object['email']
-    self.encrypted_password = facebook_object['id'] + 'password'
+    self.password = facebook_object['id'] + 'password'
     self.save!
   end
 

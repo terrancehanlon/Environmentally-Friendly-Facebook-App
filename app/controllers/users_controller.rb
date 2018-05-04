@@ -6,15 +6,10 @@ class UsersController < ApplicationController
 
   def login
     facebook_object = User.koala(request.env['omniauth.auth']['credentials'])
-      if User.exists?(fb_id: facebook_object['id'])
-        @user = User.where(fb_id: facebook_object['id'])
-        sign_in(@user)
-      else
-      @user = User.new(fb_id: facebook_object['id'], name: facebook_object['name'], email: facebook_object['email'], encrypted_password: facebook_object['id']+facebook_object['name'])
-      @user.save
-      @user_to_sign_in = User.where(fb_id: facebook_object['id'])
-      sign_in(@user)
-    end
+    @user = User.where(fb_id: facebook_object['id']).first_or_create
+    @user.update_based_on_facebook_params(facebook_object)
+    sign_in(@user)
+  end
 
   end
 
@@ -24,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def create_list
-    list = RecycleList.new(user_fb_id: @user.fb_id)
+    list = RecycleList.new(user_fb_id: current_user.fb_id)
     list.save
      #user.has_list = true
    end

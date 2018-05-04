@@ -9,7 +9,7 @@ class User < ApplicationRecord
     self.name = facebook_object['name']
     self.email = facebook_object['email']
     self.encrypted_password = facebook_object['id'] + 'password'
-    self.save
+    self.save!
   end
 
   def self.koala(auth)

@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def create_list
-    list = RecycleList.new(user_fb_id: current_user.fb_id)
+    list = RecycleList.new(user_fb_id: @user.fb_id)
     list.save
      #user.has_list = true
    end

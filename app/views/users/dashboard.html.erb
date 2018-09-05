@@ -12,3 +12,12 @@
   <h1> See how much you've recycled </h1>
   <h1><%= link_to "Show your list!", '/users/lists' %> </h1>
 </div>
+
+<hr>
+<%= form_with scope: :recyle_list, local: true do |form| %>
+<p>
+  <%= form.lable :recycle_list_id %> <br>
+  <%= form.text_field :id %>
+
+  <%= form.submit %>
+</p>
